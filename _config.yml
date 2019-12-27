@@ -3,10 +3,10 @@
 # Site wide configuration
 ####################################
 #
-title: Leonids
-email:
+title: Rumor1993
+email: rumor1993@naver.com
 description: A simple and awesome blog theme powered by jekyll.
-url: # the base hostname & protocol for your site
+url: "https://rumor1993.github.io"
 keywords: ["blog", "jekyll"]
 
 #
