@@ -26,7 +26,7 @@
     height: 100px;
     float: none;
     @include media-query($medium-screen) {
-      margin-right: 0;
+      // margin-right: 0;
     }
   }
   .author_name {
@@ -48,7 +48,7 @@
     display: block;
   }
   @include media-query($medium-screen) {
-    text-align: right;
+    text-align: center;
     margin: 0 auto;
     padding: 0 0px 80px;
   }
