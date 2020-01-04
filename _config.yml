@@ -43,14 +43,13 @@ owner:
   facebook: #username
   google:
     plus: #username
-    analytics:
+    analytics:UA-155299423-1
     verify:
     ad-client:
     ad-slot:
   bing-verify:
   github: #username
   gitlab: #username
-  google_analytics: UA-155299423-1
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
   linkedin: #username
   skype: #username
