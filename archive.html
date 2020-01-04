@@ -4,6 +4,15 @@ title:  Archive
 permalink: /archive/
 ---
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155299423-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155299423-1');
+</script>
+
 <div class="archive">
   <div class="timeline" id="timeline">
     {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %}
