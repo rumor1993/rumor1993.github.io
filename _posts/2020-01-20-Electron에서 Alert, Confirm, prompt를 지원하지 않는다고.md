@@ -59,9 +59,9 @@ confirm 또한 alert과 동일하게 기존의 confirm 함수를 저장하고 �
 
 ## 테스트
 
-![Smithsonian Image <](https://github.com/rumor1993/rumor1993.github.io/blob/master/img/image.png?raw=true)
+![Smithsonian Image <](https://github.com/rumor1993/rumor1993.github.io/blob/master/img/image.png?raw=true){: style="margin:0px"}
 웹에서는 기존의 window 함수인 Confirm창이 잘나오고 있다.
-![Smithsonian Image <](https://github.com/rumor1993/rumor1993.github.io/blob/master/img/image%20(1).png?raw=true)
+![Smithsonian Image <](https://github.com/rumor1993/rumor1993.github.io/blob/master/img/image%20(1).png?raw=true){: style="margin:0px"}
 Electorn에서는 새롭게 커스텀한 Confirm창이 잘나오고 있다.
 
 
