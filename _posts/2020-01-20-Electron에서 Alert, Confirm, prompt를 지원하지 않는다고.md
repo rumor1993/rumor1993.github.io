@@ -59,9 +59,9 @@ confirm 또한 alert과 동일하게 기존의 confirm 함수를 저장하고 �
 
 ## 테스트
 
-[기존의 Confirm창](https://github.com/rumor1993/rumor1993.github.io/blob/master/img/image.png?raw=true)
+![기존의 Confirm창](https://github.com/rumor1993/rumor1993.github.io/blob/master/img/image.png?raw=true)
 웹에서는 기존의 window 함수인 Confirm창이 잘나오고 있다.
-[커스텀한 Confirm창](https://github.com/rumor1993/rumor1993.github.io/blob/master/img/image%20(1).png?raw=true)
+![커스텀한 Confirm창](https://github.com/rumor1993/rumor1993.github.io/blob/master/img/image%20(1).png?raw=true)
 Electorn에서는 새롭게 커스텀한 Confirm창이 잘나오고 있다.
 
 
