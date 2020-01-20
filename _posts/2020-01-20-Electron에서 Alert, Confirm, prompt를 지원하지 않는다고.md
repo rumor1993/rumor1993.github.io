@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Electron에서 Alert, Confirm, Prompt를 사용하면 Input창이 먹통이 된다고? 
+title: Electron에서 Alert, Confirm, Prompt 사용하면 안되는 이유? 
 excerpt: ""
 categories: [develop]
 comments: true
