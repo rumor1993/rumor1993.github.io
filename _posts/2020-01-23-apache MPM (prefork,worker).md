@@ -8,6 +8,7 @@ image:
   feature: https://wisdomeweb.com/wp-content/uploads/2019/05/Tuning-Your-Apache-and-improve-performance-of-Apache-Server.jpg
   credit: wisdomeweb
   creditlink: https://wisdomeweb.com/tuning-your-apache-and-improve-performance-of-apache-server/
+  styles: width:664px; height:229px;
 ---
 
 
