@@ -21,12 +21,12 @@ image:
 ## Apache에 MPM(Multi-Processing Module)
 아파치 웹서버는 멀티 프로세스 방식으로 요청(Request)을 처리하는데 이때 prefork와 worker의 방식을 선택해서 처리를 합니다.  
 
-* Prefork 방식
+# Prefork 방식
 Prefork 방식은 자식프로세스가 싱글쓰레드로 동작한다고 합니다. 클라이언트로 요청을 받게 되면 하나의 프로세스가 이를 처리하는 방식을 말합니다 한 자식 프로세스당 하나의 쓰레드를 사용하는 방식을 PreFork라고 하는데 이 방식은 안정적인편이라서 아파치의 기본설정값으로 설정이 되어집니다. 아무래도 요청당 하나의 프로세스가 이를 처리하기 때문에 안정성이 높아 집니다 하지만 PreFork 방식은 Worker 방식보다 자원을 많이 사용하는 단점이 있습니다 즉, 동시접속자 많아진다면 Worker 방식에 비해 많은 자원을 사용하게 됩니다
 
 <!-- https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile24.uf.tistory.com%2Fimage%2F225E6A40579848BB2B1A26 -->
 
-* worker 방식
+# worker 방식
 Worker 방식은 자식 프로세스가 멀티 쓰레드로 동작한다고 합니다. 클라이언트로 요청을 받게 되면 프로세스가 이를 처리하는 PreFork와 달리 하나의 쓰레드가 처리하는 방식 입니다. 한 자식의 프로세스당 여러 개의 쓰레드를 가지고 있기 때문에 Worker 방식이 Prefork보다 메모리를 적게 사용하는 장점을 가지게 됩니다. 
 그래서 동시접속자를 처리하는데 유리합니다. 또한 스레드간에 메모리를 공유하고 있다고 하네요
 
@@ -94,9 +94,9 @@ https://tkdev.tistory.com/11
 </IfModule>
 ~~~
 
-아파치 에러 로그에 나온 server reached MaxRequestWorkers setting, consider raising the MaxRequestWorkers 내용처럼 `MaxRequestWorkers`의 설정값을 높게 변경하도록 했다.
-
+아파치 에러 로그에 나온 server reached MaxRequestWorkers setting, consider raising the MaxRequestWorkers 내용처럼 `MaxRequestWorkers`의 설정값을 높게 변경하도록 했습니다. 즉, ServiceLimit 256 이고 ThreadsPerChild 64로 설정했기 때문에 총 16,384‬개의 동시처리가 가능해집니다. 하지만 실제로 가동되는 프로세스의 수를 계산해야하는데 MaxRequestWorkers를 8192 /  ThreadsPerChild 64 나눈 128개가 가동되는 상태가 됩니다. 최초의 5개의 프로세스로 시작을 해서 한개의 프로세스가 64개 요청처리가 가능한 상태에인데 한개의 프로세스가 추가 될때마다 64개의 요청이 더 처리가 가능해집니다. 그렇다면 해당 설정값은 3,200개의 요청을 처리가 가능해집니다.
+ 
 ## Notices
-근데 ServerLimit 256 * 64를 하면 8192의 두배가 되는데 문제가 없는건가? prefork의 경우 limit 값과 MaxRequestWorkers 같게 설정하는데 내일 팀장님께물어봐야겠다 
+아파치의 MPM중 Event에 대해서도 알아보아야겠다. WAS에 대해서도 좀더 많은 지식을 갖도록 노력해야겠다. 
 {: .notice}
 
