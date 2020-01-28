@@ -94,7 +94,7 @@ https://tkdev.tistory.com/11
 </IfModule>
 ~~~
 
-아파치 에러 로그에 나온 server reached MaxRequestWorkers setting, consider raising the MaxRequestWorkers 내용처럼 `MaxRequestWorkers`의 설정값을 높게 변경하도록 했다.
+아파치 에러 로그에 나온 server reached MaxRequestWorkers setting, consider raising the MaxRequestWorkers 내용처럼 `MaxRequestWorkers`의 설정값을 높게 변경하도록 했습니다.
 
 ## Notices
 근데 ServerLimit 256 * 64를 하면 8192의 두배가 되는데 문제가 없는건가? prefork의 경우 limit 값과 MaxRequestWorkers 같게 설정하는데 내일 팀장님께물어봐야겠다 
