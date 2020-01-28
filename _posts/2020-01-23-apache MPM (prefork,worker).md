@@ -12,7 +12,7 @@ image:
 ---
 
 
-### Apache MPM(Multi-Processing Module)
+### 503 service unavailable 에러가 발생했다.
 엔터프라이즈 고객사에서 WAS 증설작업 이후에 팝업을 띄우는 이벤트를 실행하면 페이지를 찾을 수 없다는 오류가 발생한다고 했습니다. 우선은 팝업을 띄우기 전에 세션을 체크해서 세션이 존재하지 않으면 세션을 만들어주는 방어로직을 추가했습니다. 하지만 계속해서 오류가 발생했고 원인을 찾던 도중 503 Service Unavailable 에러가 발생했다는 소식을 듣고 스카우터를 통해서 모든 WAS서버가 살아있는지 확인을 했습니다. 이상하게도 WAS 서버에는 CPU와 GC, Service Count, TPS, XLOG 모두 이상이 없는 상태였습니다 WAS단의 원인은 아닌듯 했고 우리는 WEB서버를 확인하기 시작했다. 해당 부분을 확인해보니 에러가 발생하고 있었습니다. 에러의 내용은 너무 많은 동시접속자를 견디지 못한다는 오류 였습니다. 
 
 ## 원인파악
@@ -21,12 +21,12 @@ image:
 ## Apache에 MPM(Multi-Processing Module)
 아파치 웹서버는 멀티 프로세스 방식으로 요청(Request)을 처리하는데 이때 prefork와 worker의 방식을 선택해서 처리를 합니다.  
 
-* Prefork 방식
+# Prefork 방식
 Prefork 방식은 자식프로세스가 싱글쓰레드로 동작한다고 합니다. 클라이언트로 요청을 받게 되면 하나의 프로세스가 이를 처리하는 방식을 말합니다 한 자식 프로세스당 하나의 쓰레드를 사용하는 방식을 PreFork라고 하는데 이 방식은 안정적인편이라서 아파치의 기본설정값으로 설정이 되어집니다. 아무래도 요청당 하나의 프로세스가 이를 처리하기 때문에 안정성이 높아 집니다 하지만 PreFork 방식은 Worker 방식보다 자원을 많이 사용하는 단점이 있습니다 즉, 동시접속자 많아진다면 Worker 방식에 비해 많은 자원을 사용하게 됩니다
 
 <!-- https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile24.uf.tistory.com%2Fimage%2F225E6A40579848BB2B1A26 -->
 
-* worker 방식
+# worker 방식
 Worker 방식은 자식 프로세스가 멀티 쓰레드로 동작한다고 합니다. 클라이언트로 요청을 받게 되면 프로세스가 이를 처리하는 PreFork와 달리 하나의 쓰레드가 처리하는 방식 입니다. 한 자식의 프로세스당 여러 개의 쓰레드를 가지고 있기 때문에 Worker 방식이 Prefork보다 메모리를 적게 사용하는 장점을 가지게 됩니다. 
 그래서 동시접속자를 처리하는데 유리합니다. 또한 스레드간에 메모리를 공유하고 있다고 하네요
 
@@ -94,9 +94,10 @@ https://tkdev.tistory.com/11
 </IfModule>
 ~~~
 
-아파치 에러 로그에 나온 server reached MaxRequestWorkers setting, consider raising the MaxRequestWorkers 내용처럼 `MaxRequestWorkers`의 설정값을 높게 변경하도록 했습니다.
 
+아파치 에러 로그에 나온 server reached MaxRequestWorkers setting, consider raising the MaxRequestWorkers 내용처럼 `MaxRequestWorkers`의 설정값을 높게 변경하도록 했습니다. 즉, ServiceLimit 256 이고 ThreadsPerChild 64로 설정했기 때문에 총 16,384‬개의 동시처리가 가능해집니다. 하지만 실제로 가동되는 프로세스의 수를 계산해야하는데 MaxRequestWorkers를 8192 /  ThreadsPerChild 64 나눈 128개가 가동되는 상태가 됩니다. 최초의 5개의 프로세스로 시작을 해서 한개의 프로세스가 64개 요청처리가 가능한 상태에인데 한개의 프로세스가 추가 될때마다 64개의 요청이 더 처리가 가능해집니다. 그렇다면 해당 설정값은 3,200개의 요청을 처리가 가능해집니다.
+ 
 ## Notices
-근데 ServerLimit 256 * 64를 하면 8192의 두배가 되는데 문제가 없는건가? prefork의 경우 limit 값과 MaxRequestWorkers 같게 설정하는데 내일 팀장님께물어봐야겠다 
+아파치의 MPM중 Event에 대해서도 알아보아야겠다. WAS에 대해서도 좀더 많은 지식을 갖도록 노력해야겠다. 
 {: .notice}
 
