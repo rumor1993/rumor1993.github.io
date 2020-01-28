@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Electron 계정을 안전하게 유지할 수없는 브라우저 나 앱에서 로그인하려고합니다.
+title:  Electron Google Oauth "계정을 안전하게 유지할 수없는 브라우저 나 앱에서 로그인하려고합니다." 에러가 발생했다!
 excerpt: ""
 categories: [develop]
 comments: true
