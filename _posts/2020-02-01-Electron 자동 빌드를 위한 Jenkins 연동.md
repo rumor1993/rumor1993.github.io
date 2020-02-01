@@ -96,8 +96,8 @@ Kind 부분은 SSH로 변경해주시고 UserName에는 Jenkins Job에서 보여
 
 
 여기서 깃주소를 입력할때 실수하시는 부분이 깃주소 그대로를 입력하면 안되고 ssh 주소를 입력 해주셔야 합니다.
-![ssh](/img/sshues)
-![ssh](/img/sshues2)
+![ssh](/img/sshues.png)
+![ssh](/img/sshues2.png)
 
 
 ## Notices
