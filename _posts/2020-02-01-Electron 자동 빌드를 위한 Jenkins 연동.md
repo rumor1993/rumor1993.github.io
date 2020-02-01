@@ -71,11 +71,11 @@ Mac에서 Jenkins 설치하기
 
 `KeyName` , `KeyName`.pub 파일이 생겨있을텐데요 그렇다면 성공적으로 키를 생성한 것 입니다 이제 GitHub에서 설정을 하겠습니다.
 
-![깃허브 설정화면](gitgub_ssh.png)
+![깃허브 설정화면](/img/gitgub_ssh.png)
 
 위에 보이는 이미지처럼 프로필을 클릭하면 나오는 settings 부분을 클릭하고 SSH and GPG keys 부분을 클릭하시면 SSH Key를 생성하는 페이지가 나타납니다 여기서 New SSH Key를 클릭하시면 됩니다.
 
-![깃허브 설정화면](git_newSSH.png)
+![깃허브 설정화면](/img/git_newSSH.png)
 
 방금전에 생성한 공개키값을 Key 부분에 입력해주시면 됩니다 Title 부분은 원하시는대로 설정하시면 됩니다.  
 
@@ -83,23 +83,21 @@ Mac에서 Jenkins 설치하기
 
 ssh-rsa 부분부터 복사해서 넣어주시면 됩니다. 그리고 add SSH Key를 눌러주시면 SSH키가 생성이 완료 되었습니다. 이제 다시 Jenkins로 가서 설정을 변경하도록 하겠습니다.
 
-![젠킨스 SSH]()
-
 Credentials -> System -> Global credentials -> Add Credentials
 * cat ~/.ssh/"KeyName" (비밀키)
 
 Kind 부분은 SSH로 변경해주시고 UserName에는 Jenkins Job에서 보여줄 인증키 이름 입니다 Private Key는 비밀키를 입력해주시면 됩니다
 
 ![Jenkins](https://t1.daumcdn.net/cfile/tistory/99B2374E5D57601A32)
-![Jenkins](jenkins.png)
-![jenkins](jenkins2.png)
+![Jenkins](/img/jenkins.png)
+![jenkins](/img/jenkins2.png)
 
 소스 코드 관리에서 Git을 선택해주시고 Repository URL을 넣어주시면 됩니다. Credentials 부분에는 아까 만든 젠킨스 인증 UserName을 선택해주시면 됩니다.
 
 
 여기서 깃주소를 입력할때 실수하시는 부분이 깃주소 그대로를 입력하면 안되고 ssh 주소를 입력 해주셔야 합니다.
-![ssh](sshues)
-![ssh](sshues2)
+![ssh](/img/sshues)
+![ssh](/img/sshues2)
 
 
 ## Notices
