@@ -90,14 +90,14 @@ Kind 부분은 SSH로 변경해주시고 UserName에는 Jenkins Job에서 보여
 
 ![Jenkins](https://t1.daumcdn.net/cfile/tistory/99B2374E5D57601A32){: style="margin:0px"}
 ![Jenkins](/img/jenkins.png){: style="margin:0px"}
-![jenkins](/img/jenkins2.png){: style="margin:0px"}
+![jenkins](/img/jenkins2.PNG){: style="margin:0px"}
 
 소스 코드 관리에서 Git을 선택해주시고 Repository URL을 넣어주시면 됩니다. Credentials 부분에는 아까 만든 젠킨스 인증 UserName을 선택해주시면 됩니다.
 
 
 여기서 깃주소를 입력할때 실수하시는 부분이 깃주소 그대로를 입력하면 안되고 ssh 주소를 입력 해주셔야 합니다.
-![ssh](/img/sshues.png){: style="margin:0px"}
-![ssh](/img/sshues2.png){: style="margin:0px"}
+![ssh](/img/sshues.PNG){: style="margin:0px"}
+![ssh](/img/sshues2.PNG){: style="margin:0px"}
 
 
 ## Notices
