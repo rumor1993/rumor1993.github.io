@@ -5,7 +5,7 @@ excerpt: ""
 categories: [develop]
 comments: true
 image:
-  feature: electron+jenkins
+  feature: electron+jenkins.png
   credit: rumor1993
   creditlink: https://rumor1993.github.io/
   styles: width:664px; 
