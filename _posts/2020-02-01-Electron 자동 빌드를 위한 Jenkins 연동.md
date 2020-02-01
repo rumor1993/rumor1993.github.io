@@ -101,5 +101,5 @@ Kind 부분은 SSH로 변경해주시고 UserName에는 Jenkins Job에서 보여
 
 
 ## Notices
-2부에서는 locahost환경에서 외부에서 접속하도록 설정하는 방법에 대해서 포스팅하도록  하겠습니다. 
+2부에서는 locahost환경에서 외부에서 접속하도록 설정하는 방법에 대해서 포스팅하도록  하겠습니다. (:
 {: .notice}
