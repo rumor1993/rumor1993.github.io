@@ -5,7 +5,7 @@ excerpt: ""
 categories: [develop]
 comments: true
 image:
-  feature: https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwjhyL7Fq-rnAhWKvZQKHQNaAXEQjRx6BAgBEAQ&url=https%3A%2F%2Flab.getapp.com%2F5-bug-tracking-apps-for-killer-bug-reporting%2F&psig=AOvVaw3-YjiLuA7fia2ypFD4dx7G&ust=1582638901651716
+  feature: https://lab.getapp.com/wp-content/uploads/2018/07/HEAD-Write_killer_bug_reports_with_these_5_bug_tracking_apps_Hero.png
   credit: getapp
   creditlink: https://lab.getapp.com/5-bug-tracking-apps-for-killer-bug-reporting/
   styles: width:664px; 
